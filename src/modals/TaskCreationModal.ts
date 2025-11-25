@@ -782,6 +782,14 @@ export class TaskCreationModal extends TaskModal {
 				},
 			});
 
+			// Make the entire editor container focusable by clicking anywhere inside
+			if (this.nlMarkdownEditor) {
+				editorContainer.addEventListener("click", (e) => {
+					// Focus the editor when clicking anywhere in the container
+					this.nlMarkdownEditor?.focus();
+				});
+			}
+
 			// Focus the editor after a short delay and reset scroll position
 			setTimeout(() => {
 				if (this.nlMarkdownEditor) {

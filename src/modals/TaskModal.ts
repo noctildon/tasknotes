@@ -732,6 +732,13 @@ export abstract class TaskModal extends Modal {
 					return true; // Prevent default tab behavior
 				},
 			});
+
+			// Make the entire editor container focusable by clicking anywhere inside
+			if (this.detailsMarkdownEditor) {
+				detailsEditorContainer.addEventListener("click", (e) => {
+					this.detailsMarkdownEditor?.focus();
+				});
+			}
 		}
 
 		// Additional form fields (contexts, tags, etc.) can be added here
