@@ -229,6 +229,13 @@ export class EmbeddableMarkdownEditor extends getEditorBase() {
 	}
 
 	/**
+	 * Focus the editor
+	 */
+	focus(): void {
+		this.editor?.cm?.focus();
+	}
+
+	/**
 	 * Override to handle content changes
 	 */
 	onUpdate(update: ViewUpdate, changed: boolean): void {

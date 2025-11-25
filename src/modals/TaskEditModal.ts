@@ -375,6 +375,13 @@ export class TaskEditModal extends TaskModal {
 					return true; // Prevent default tab behavior
 				},
 			});
+
+			// Make the entire editor container focusable by clicking anywhere inside
+			if (this.markdownEditor) {
+				editorContainer.addEventListener("click", (e) => {
+					this.markdownEditor?.focus();
+				});
+			}
 		}
 
 		// Additional form fields (contexts, tags, etc.)
